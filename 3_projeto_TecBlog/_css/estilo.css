@@ -45,13 +45,13 @@ body {
     background: white;
 }
 
-.conteudo-lateral{
+.conteudo-lateral {
     background: white;
     padding: 10px;
     margin-bottom: 20px;
 }
 
-.postagem-lateral{
+.postagem-lateral {
     font-size: 0.8em;
     padding: 5px;
     border-bottom: 1px dotted #CCC;
@@ -69,7 +69,8 @@ a {
     text-decoration: none;
 }
 
-a:link, a:visited {
+a:link,
+a:visited {
     color: #f7b600;
 }
 
@@ -116,4 +117,3 @@ h3 {
     margin-bottom: 10px;
     display: block;
 }
-
