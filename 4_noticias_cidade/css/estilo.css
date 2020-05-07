@@ -1,0 +1,74 @@
+/*Estrutura do site*/
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background: #fff url(../imagens/fundo.png) repeat-x top left ;
+}
+
+/*topo do site logo e navegacao*/
+#topo{
+    width: 750px;
+    margin: 0 auto;
+    height: 150px;
+    background: url(../imagens/detalhe-topo.png) no-repeat right top;
+    padding-top: 25px;
+}
+
+.logo{
+    width: 152px;
+    height: 66px;
+    background: url(../imagens/logo.png) no-repeat center;
+    text-indent: -3000px; /*Ele esconde o que esta escrito no h1 .logo para que não fique aparecendo em cima da logo, essa abordagem é necessária caso o css do site não carregue*/
+}
+
+#topo ul{
+    margin-top: 30px;
+    background: #b10333;
+    float: left;
+}
+
+#topo ul li{
+    float: left;
+}
+
+#topo ul a{
+    font-size: 0.9em;
+    display: block;
+    padding: 0.5em 1.5em;
+    line-height: 2.1em;
+    text-decoration: none;
+    color: #fff;
+    background: url(../imagens/divisor.png) no-repeat left center;
+}
+
+#topo ul .primeiro a{
+    background: none;
+}
+
+#topo ul a:hover{
+    color: #69001d;
+}
+
+body.home #navegacao #home a,
+body.brasil #navegacao #brasil a,
+body.internacional #navegacao #internacional a,
+body.fotos #navegacao #fotos a{
+    color: #FFF;
+    background: #de003e;
+    cursor: text;
+}
+
+#container{
+    width: 750px;
+    margin: 0 auto;
+}
+
+/*Barra de navegação*/
+ul{
+    margin: 0; 
+    padding: 0;
+    list-style: none;
+ }
