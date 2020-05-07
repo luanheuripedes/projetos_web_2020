@@ -7,11 +7,13 @@ body{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background: #fff url(../imagens/fundo.png) repeat-x top left ;
 }
-
-/*topo do site logo e navegacao*/
-#topo{
+#container{
     width: 750px;
     margin: 0 auto;
+}
+/*topo do site logo e navegacao*/
+#topo{
+    
     height: 150px;
     background: url(../imagens/detalhe-topo.png) no-repeat right top;
     padding-top: 25px;
@@ -72,3 +74,40 @@ ul{
     padding: 0;
     list-style: none;
  }
+
+ /*Configura layout de tre colunas*/
+ #conteudo{
+    margin-top: 60px;
+    background: #971b1b;
+ }
+
+ #primario{
+     width: 270px;
+     float: left;
+     background:blue;
+ }
+
+ #secundario{
+    width: 270px;
+    float: left;
+    background:green;
+ }
+
+ #lateral{
+    background:yellow;
+    float: left;
+    width: 180px;
+ }
+
+ #container-rodape{
+     background: #294c71;
+     padding: 20px;
+ }
+
+ #rodape{
+     width: 750px;
+     margin: 0 auto;
+     color:#fff;
+     text-align: center;
+ }
+
