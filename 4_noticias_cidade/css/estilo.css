@@ -85,18 +85,21 @@ ul{
      width: 270px;
      float: left;
      background:blue;
+     margin: 0 0 20px 195px;
  }
 
  #secundario{
     width: 270px;
     float: left;
     background:green;
+    margin: 0 0px 20px 15px;
  }
 
  #lateral{
     background:yellow;
     float: left;
     width: 180px;
+    margin: 0 0 20px -750px ;
  }
 
  #container-rodape{
