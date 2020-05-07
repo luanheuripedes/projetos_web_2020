@@ -81,12 +81,27 @@ ul{
     background: #971b1b;
  }
 
- #primario{
+ #tres-colunas #primario{
      width: 270px;
      float: left;
      background:blue;
      margin: 0 0 20px 195px;
  }
+
+#duas-colunas #primario{
+    width: 555px;
+    float: left;
+    background:blue;
+    margin: 0 0 20px 195px;
+}
+
+#uma-coluna #primario{
+    width: 750px;
+    float: left;
+    background:blue;
+    margin: 0 0 20px 0px;
+}
+
 
  #secundario{
     width: 270px;
@@ -96,10 +111,27 @@ ul{
  }
 
  #lateral{
-    background:yellow;
     float: left;
     width: 180px;
     margin: 0 0 20px -750px ;
+ }
+
+ .caixa{
+     background: #f3f3f3 url(../imagens/fundo-caixa.png);
+     margin: 10px 0;
+     padding: 5px;
+ }
+ h2{
+     font-size: 1.0em;
+     background: #294c71;
+     color: #FFF;
+     padding: 5px;
+ }
+
+ .caixa-conteudo{
+     background: #fff;
+     padding: 5px;
+     margin-top: 5px;
  }
 
  #container-rodape{
