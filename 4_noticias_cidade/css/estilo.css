@@ -81,11 +81,10 @@ ul{
     background: #971b1b;
  }
 
- #tres-colunas #primario{
-     width: 270px;
-     float: left;
-     background:blue;
-     margin: 0 0 20px 195px;
+ #primario{
+    width: 270px;
+    float: left;
+    margin: 0 0 20px 195px;
  }
 
 #duas-colunas #primario{
@@ -106,7 +105,6 @@ ul{
  #secundario{
     width: 270px;
     float: left;
-    background:green;
     margin: 0 0px 20px 15px;
  }
 
@@ -171,6 +169,29 @@ ul{
      background-color: #b10333;
      border: 2px solid #870529;
  }
+
+
+img.imagem-principal{
+    width: 98%;
+    border: 3px groove #dfdfdf;
+}
+
+/*Formatando Cabeçalhos*/
+h3{
+    text-transform: uppercase;
+    display: inline;
+    font-size: 0.8em;
+    padding: 3px;
+}
+
+.destaque h3{
+    background: #b10333;
+    color: #fff;
+}
+
+.entrevista h3{
+    background: #de003e;
+}
 
  #container-rodape{
      background: #294c71;

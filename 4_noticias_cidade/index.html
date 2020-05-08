@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Notícias cidade - Seu site de notícias</title>
-        <link rel="stylesheet" href="css/estilo.css">
-    </head>
 
-    <body id="tres-colunas" class="home">
-      
-        <div id="container">  <!--Inicio do container-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notícias cidade - Seu site de notícias</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
 
-            <header id="topo"><!--Inicio do topo do site menu/logo-->
+<body class="home">
+
+    <div id="container">
+        <!--Inicio do container-->
+
+        <header id="topo">
+            <!--Inicio do topo do site menu/logo-->
             <h1 class="logo">Notícias cidade</h1>
 
             <ul id="navegacao">
@@ -23,52 +26,82 @@
                 <li id="ciencia"><a href="">Ciência</a></li>
                 <li id="fotos"><a href="fotos.html">Fotos</a></li>
             </ul>
-            </header><!--FIM do topo do site menu/logo-->
+        </header>
+        <!--FIM do topo do site menu/logo-->
 
-            <div id="conteudo"><!--Inicio do conteudo-->
-                <div id="primario">Primario</div>
-                <div id="secundario">Secundario</div>
-
-                <div id="lateral">
-                    <div class="caixa">
-                        <h2>Entrevistas</h2>
-                        <div class="caixa-conteudo">
-                            <ul>
-                                <li><a href="">Jose Almeida</a></li>
-                                <li><a href="">Felipe Silva</a></li>
-                                <li><a href="">Renato Rodrigues</a></li>
-                                <li><a href="">Abelardo Silveira</a></li>
-                                <li><a href="">André Carlos</a></li>
-                                <li><a href="">Marcio Mello</a></li>
-                                <li><a href="">João Pedro</a></li>
-                                <li><a href="">Fernando Weiss</a></li>
-                            </ul>
-                        </div>
+        <div id="conteudo">
+            <!--Inicio do conteudo-->
+            <div id="primario">
+                <div class="caixa destaque">
+                    <h2>Destaque</h2>
+                    <div class="caixa-conteudo">
+                        <h3>Nova Legislação</h3>
+                        <img class="imagem-principal" src="./imagens/taxi.jpg" alt="" width="100%">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam nihil aut quod mollitia
+                            numquam rerum corrupti perspiciatis, excepturi voluptatem quis quisquam ipsam exercitationem
+                            fugiat alias unde voluptate ducimus adipisci doloribus.</p>
+                        <a href="">Leia mais!</a>
                     </div>
+                </div>
+            </div>
 
-                    <div class="caixa">
-                        <h2>News</h2>
-                        <div class="caixa-conteudo">
-                            <form action="">
-                                <div>
-                                    <label for="email">Email:</label>
-                                    <input type="text" name="email" id="email" placeholder="E-mail" >
-                                </div>
-                                <div>
-                                    <input class="submit" type="submit" value="Cadastrar">
-                                </div>
-                            </form>
-                        </div>
+            <div id="secundario">
+                <div class="caixa entrevista">
+                    <h2>Ultima Entrevista</h2>
+                    <div class="caixa-conteudo">
+                        <h3>Entrevista com Felipe Silva</h3>
+                        <img class="imagem-principal" src="./imagens/doutor.jpg" alt="" width="100%">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam nihil aut quod mollitia
+                            numquam rerum corrupti perspiciatis, excepturi voluptatem quis quisquam ipsam exercitationem
+                            fugiat alias unde voluptate ducimus adipisci doloribus.</p>
+                        <a href="">Leia mais!</a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="lateral">
+                <div class="caixa">
+                    <h2>Entrevistas</h2>
+                    <div class="caixa-conteudo">
+                        <ul>
+                            <li><a href="">Jose Almeida</a></li>
+                            <li><a href="">Felipe Silva</a></li>
+                            <li><a href="">Renato Rodrigues</a></li>
+                            <li><a href="">Abelardo Silveira</a></li>
+                            <li><a href="">André Carlos</a></li>
+                            <li><a href="">Marcio Mello</a></li>
+                            <li><a href="">João Pedro</a></li>
+                            <li><a href="">Fernando Weiss</a></li>
+                        </ul>
                     </div>
                 </div>
 
-            </div><!--FIM do conteudo-->
-         </div><!--FIM do container-->
-         
-         <div id="container-rodape"  style="clear: both;">
-            <footer id="rodape">
-                <p>&copy; Copyright 2000-2020 Notícias cidade</p>
-            </footer>
-         </div>
-    </body>
+                <div class="caixa">
+                    <h2>News</h2>
+                    <div class="caixa-conteudo">
+                        <form action="">
+                            <div>
+                                <label for="email">Email:</label>
+                                <input type="text" name="email" id="email" placeholder="E-mail">
+                            </div>
+                            <div>
+                                <input class="submit" type="submit" value="Cadastrar">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!--FIM do conteudo-->
+    </div>
+    <!--FIM do container-->
+
+    <div id="container-rodape" style="clear: both;">
+        <footer id="rodape">
+            <p>&copy; Copyright 2000-2020 Notícias cidade</p>
+        </footer>
+    </div>
+</body>
+
 </html>
