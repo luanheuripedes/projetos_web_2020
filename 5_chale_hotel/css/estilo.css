@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background: #fff url(../imagens/bg.png);
+    margin: 15px;
+}
+
+#container{
+    background: #ede9cc;
+}
+
+#topo{
+    position: relative;
+    background: #dbc87d;
+    height: 15.4em;/*Define 'em' pois caso aumente o tamanho do texto nos queremos que essa altura seja proporcional ao tamanho dos texto */
+    min-height: 250px;
+}
+
+#area-logo{
+    position: absolute;
+    background: url(../imagens/topo-imagem-principal.png) no-repeat;
+    width: 100%;
+    height: 250px;
+    top: 0;
+    left: 0;
+}
+
+#area-menu{
+    position: absolute;
+    background: url(../imagens/topo-imagem-lateral.png);
+    width: 450px;
+    height: 250px;
+    top: 0;
+    right: 0;
+}
+
