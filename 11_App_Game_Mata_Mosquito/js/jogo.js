@@ -1,5 +1,5 @@
 /*Função que define o tamanho e a largura da tela e a atualiza caso o tamanho e a largura mudem*/
-var altura = 0, largura = 0;
+var altura = 0, largura = 0, vidas = 1;
 function ajustaTamanhoPalcoJogo(){
     largura = window.innerWidth;
     altura = window.innerHeight;
@@ -13,7 +13,17 @@ function posicaoRandomica(){
 
     //remover o mosquito anterior (caso exista)
     if(document.getElementById('mosquito')){
-        document.getElementById('mosquito').remove()
+        document.getElementById('mosquito').remove();
+
+        //console.log('Elemento selecionado foi: v' + vidas);
+        if(vidas > 3){
+            alert('Interromper o jogo GAME OVER');
+        }
+        else{
+        document.getElementById('v' + vidas).src = "/img/coracao_vazio.png";
+        }
+
+        vidas++;
     }
 
     /*Criado uma variavel para criar posições aleatorias para o mosquito*/ 
@@ -35,6 +45,9 @@ function posicaoRandomica(){
     mosquito.style.top = posicaoY + 'px';
     mosquito.style.position = 'absolute';
     mosquito.id = 'mosquito';
+    mosquito.onclick = function(){
+        this.remove();
+    }
 
     document.body.appendChild(mosquito);
 
