@@ -12,3 +12,13 @@
     width: 90px;
     height: 90px;
 }
+
+/*Muda o lado em que a imagem esta*/
+/*Esquerdo*/
+.ladoA{
+    transform: scaleX(1);
+}
+
+.ladoB{
+    transform: scaleX(-1);
+}
