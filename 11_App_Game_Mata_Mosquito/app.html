@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <title>Mata Mosquito</title>
 
     <!--Script do jogo-->
+    
     <script src="js/jogo.js"></script>
 
     <!--Estilo do jogo-->
@@ -17,21 +19,22 @@
 <body onresize="ajustaTamanhoPalcoJogo()">
 
     <div class="painel">
-       <div class="vidas">
-           <img id='v1' src="/img/coracao_cheio.png" alt="">  
-           <img id='v2' src="/img/coracao_cheio.png" alt="">
-           <img id='v3' src="/img/coracao_cheio.png" alt="">
-       </div>
+        <div class="vidas">
+            <img id='v1' src="/img/coracao_cheio.png" alt="">
+            <img id='v2' src="/img/coracao_cheio.png" alt="">
+            <img id='v3' src="/img/coracao_cheio.png" alt="">
+        </div>
 
-       <div class="cronometro">Tempo restante: ?</div>
+        <div class="cronometro">Tempo restante: ?</div>
     </div>
 
 
 
     <script>
-        setInterval(function(){
+        setInterval(function () {
             posicaoRandomica();
         }, 2000)
     </script>
 </body>
+
 </html>
