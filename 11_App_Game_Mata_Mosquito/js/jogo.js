@@ -4,6 +4,24 @@ var largura = 0;
 var vidas = 1;
 var tempo = 15;
 
+var criaMosquitoTempo = 1500;
+
+var nivel = window.location.search; //recupera o ponto de interrogação e tudo que esta a direita
+nivel = nivel.replace('?', ''); //tira todos os caracteres de interrogação na variavel nivel e substitui por '' - nada
+
+if (nivel === 'normal'){
+    //1500;
+    criaMosquitoTempo = 1500;
+}
+else if(nivel === 'dificil'){
+    //1000
+    criaMosquitoTempo = 1000;
+}
+else if(nivel === 'chucknorris'){
+    //750
+    criaMosquitoTempo = 750;
+}
+
 function ajustaTamanhoPalcoJogo() {
     largura = window.innerWidth;
     altura = window.innerHeight;
