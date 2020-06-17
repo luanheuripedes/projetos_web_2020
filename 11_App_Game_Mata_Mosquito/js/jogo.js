@@ -1,5 +1,9 @@
 /*Função que define o tamanho e a largura da tela e a atualiza caso o tamanho e a largura mudem*/
-var altura = 0, largura = 0, vidas = 1;
+var altura = 0;
+var largura = 0;
+var vidas = 1;
+var tempo = 15;
+
 function ajustaTamanhoPalcoJogo() {
     largura = window.innerWidth;
     altura = window.innerHeight;
@@ -8,6 +12,18 @@ function ajustaTamanhoPalcoJogo() {
 }
 
 ajustaTamanhoPalcoJogo();
+
+var cronometro = setInterval(function () {
+    tempo -= 1;
+
+    if(tempo < 0){
+        clearInterval(cronometro);
+        clearInterval(criaMosca);
+        alert('Vitoria');
+    }else{
+        document.getElementById('cronometro').innerHTML = tempo;
+    }
+}, 1000)
 
 function posicaoRandomica() {
 
@@ -18,7 +34,6 @@ function posicaoRandomica() {
 
         //console.log('Elemento selecionado foi: v' + vidas);
         if (vidas > 3) {
-            alert('Interromper o jogo GAME OVER');
             window.location.href = 'fim_de_jogo.html'
         }
         else {
