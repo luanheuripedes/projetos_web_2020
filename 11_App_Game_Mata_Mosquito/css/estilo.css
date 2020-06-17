@@ -1,3 +1,6 @@
+html{
+    cursor: url('/img/mata_mosca.png') 30 30, auto;/*Muda o cursor*/
+}
 body{
     background-image: url(/img/bg.jpg);
     background-repeat: no-repeat;
