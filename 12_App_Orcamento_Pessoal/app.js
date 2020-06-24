@@ -7,6 +7,15 @@ class Despesa {
         this.descricao = descricao;
         this.valor = valor;
     }
+
+    validarDados(){
+        for(let i in this){ //eu percorro todos os atributos da classe despesa
+            if(this[i] == undefined || this[i] == '' || this[i] == null){
+                return false;
+            }
+        }
+        return true;
+    }
 }
 
 class Bd {
@@ -19,7 +28,7 @@ class Bd {
     }
     getProximoId() {
         let proximoId = localStorage.getItem('id');
-        return parseInt(proximoId) + 1
+        return parseInt(proximoId) + 1;
     }
 
     gravar(d) {
@@ -50,6 +59,13 @@ function cadastrarDespesa() {
         valor.value
     );
 
-    bd.gravar(despesa);
+    if(despesa.validarDados()){
+        bd.gravar(despesa);
+        //mensagem de sucesso
+        $('#sucessoGravacao').modal('show');
+    }else{
+        $('#erroGravacao').modal('show');//
+    }
+    
 }
 
