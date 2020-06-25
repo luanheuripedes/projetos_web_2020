@@ -38,6 +38,32 @@ class Bd {
 
         localStorage.setItem('id', id);
     }
+
+    recuperarTodosRegistros(){
+
+        //array de despesas
+        let despesas = Array();
+
+        let id = localStorage.getItem('id');
+
+        //recuperar toas as despesasa cadastradas 
+        for(let i = 1; i<= id; i++){
+
+            //recuperar a despesa
+            let despesa = JSON.parse(localStorage.getItem(i));
+
+            //existe a possibilidade de haver indices que foram pulados/removidos
+            //nestes casos nos vamos pular esses indices
+            if(despesa === null){
+                continue;
+            }
+
+            //adicionando no meu array despesas a despesa recuperada no localStorage
+            despesas.push(despesa);
+        }
+
+        return despesas;
+    }
 }
 
 let bd = new Bd();
@@ -81,6 +107,13 @@ function cadastrarDespesa() {
         //dialogo erro
         $('#modalRegistraDespesa').modal('show');//
     }
+}
 
+function carregaListaDespesas(){
+    let despesas = Array();
+
+    despesas = bd.recuperarTodosRegistros();
+
+    console.log(despesas);
 }
 
