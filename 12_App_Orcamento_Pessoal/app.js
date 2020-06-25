@@ -39,7 +39,7 @@ class Bd {
         localStorage.setItem('id', id);
     }
 
-    recuperarTodosRegistros(){
+    recuperarTodosRegistros() {
 
         //array de despesas
         let despesas = Array();
@@ -47,22 +47,25 @@ class Bd {
         let id = localStorage.getItem('id');
 
         //recuperar toas as despesasa cadastradas 
-        for(let i = 1; i<= id; i++){
+        for (let i = 1; i <= id; i++) {
 
             //recuperar a despesa
             let despesa = JSON.parse(localStorage.getItem(i));
 
             //existe a possibilidade de haver indices que foram pulados/removidos
             //nestes casos nos vamos pular esses indices
-            if(despesa === null){
+            if (despesa === null) {
                 continue;
             }
 
             //adicionando no meu array despesas a despesa recuperada no localStorage
             despesas.push(despesa);
         }
-
         return despesas;
+    }
+
+    pesquiar(despesa) {
+        console.log(despesa);
     }
 }
 
@@ -89,17 +92,26 @@ function cadastrarDespesa() {
         bd.gravar(despesa);
 
         document.getElementById('modal_titulo').innerHTML = 'Registro inserido com sucesso';
-        document.getElementById('modal_titulo_div').className ='modal-header text-success';
+        document.getElementById('modal_titulo_div').className = 'modal-header text-success';
         document.getElementById('modal_conteudo').innerHTML = 'Despesa foi cadastrada com sucesso!';
         document.getElementById('modal_btn').innerHTML = 'Voltar';
         document.getElementById('modal_btn').className = 'btn btn-success';
-        
+
         //mensagem de sucesso
         $('#modalRegistraDespesa').modal('show');
+
+        //limpando os campos apos a inserção dos dados
+        ano.value = '';
+        mes.value = '';
+        dia.value = '';
+        tipo.value = '';
+        descricao.value = '';
+        valor.value = '';
+
     } else {
-        
+
         document.getElementById('modal_titulo').innerHTML = 'Erro na inclusão do registro';
-        document.getElementById('modal_titulo_div').className ='modal-header text-danger';
+        document.getElementById('modal_titulo_div').className = 'modal-header text-danger';
         document.getElementById('modal_conteudo').innerHTML = 'Erro na gravação, verifique se todos os campos foram preenchidos';
         document.getElementById('modal_btn').innerHTML = 'Voltar e corrigir'
         document.getElementById('modal_btn').className = 'btn btn-danger';
@@ -109,7 +121,7 @@ function cadastrarDespesa() {
     }
 }
 
-function carregaListaDespesas(){
+function carregaListaDespesas() {
     let despesas = Array();
 
     despesas = bd.recuperarTodosRegistros();
@@ -127,39 +139,50 @@ function carregaListaDespesas(){
     */
 
     //percorrer o array despesas, listando cada despesa de forma dinamica
-    despesas.forEach(function(d){
+    despesas.forEach(function (d) {
 
-        console.log(d);
 
         //criando a linha(tr)
         let linha = listaDespesas.insertRow();
 
         //criar as colunas (td)
-        linha.insertCell(0).innerHTML = `${ d.dia}/${ d.mes}/${d.ano}`;
+        linha.insertCell(0).innerHTML = `${d.dia}/${d.mes}/${d.ano}`;
 
         //ajustar o tipo
-        switch(parseInt(d.tipo)){
+        switch (parseInt(d.tipo)) {
             case 1:
-                 d.tipo = 'Alimentação'
-            break;
+                d.tipo = 'Alimentação'
+                break;
             case 2:
-                 d.tipo = 'Educação'
-            break;
+                d.tipo = 'Educação'
+                break;
             case 3:
-                 d.tipo = 'Lazer'
-            break;
+                d.tipo = 'Lazer'
+                break;
             case 4:
-                 d.tipo = 'Educação'
-            break;
+                d.tipo = 'Educação'
+                break;
             case 5:
                 d.tipo = 'Transporte'
-            break;
+                break;
         }
 
         linha.insertCell(1).innerHTML = d.tipo;
-
         linha.insertCell(2).innerHTML = d.descricao;
         linha.insertCell(3).innerHTML = d.valor;
     })
+}
+
+function pesquisarDespesa() {
+    let ano = document.getElementById('ano').value;
+    let mes = document.getElementById('mes').value;
+    let dia = document.getElementById('dia').value;
+    let tipo = document.getElementById('tipo').value;
+    let descricao = document.getElementById('descricao').value;
+    let valor = document.getElementById('valor').value;
+
+    let despesa = new Despesa(ano, mes, dia, tipo, descricao, valor);
+
+    bd.pesquiar(despesa);
 }
 
