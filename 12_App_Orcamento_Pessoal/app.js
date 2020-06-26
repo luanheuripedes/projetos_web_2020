@@ -55,7 +55,7 @@ class Bd {
             //existe a possibilidade de haver indices que foram pulados/removidos
             //nestes casos nos vamos pular esses indices
             if (despesa === null) {
-                continue;
+                continue
             }
 
             //adicionando no meu array despesas a despesa recuperada no localStorage
@@ -64,46 +64,52 @@ class Bd {
         return despesas;
     }
 
-    pesquiar(despesa) {
+    pesquisar(despesa) {
 
         let despesasFiltradas = Array();
 
         despesasFiltradas = this.recuperarTodosRegistros();
 
-        
+        console.log(despesasFiltradas);
         console.log(despesa);
 
-        console.log(despesasFiltradas);
         //ano
-        if(despesa.ano != ''){
+        if (despesa.ano != '') {
+            console.log('Filtro de ano');
             despesasFiltradas = despesasFiltradas.filter(d => d.ano == despesa.ano);
         }
         //mes
         if(despesa.mes != ''){
-            despesasFiltradas = despesasFiltradas.filter(d => d.mes == despesa.mes);
-        }
+			console.log("filtro de mes");
+			despesasFiltradas = despesasFiltradas.filter(d => d.mes == despesa.mes)
+		}
 
         //dia
-        if(despesa.dia != ''){
+        if (despesa.dia != '') {
+            console.log('Filtro de dia')
             despesasFiltradas = despesasFiltradas.filter(d => d.dia == despesa.dia);
         }
 
         //tipo
-        if(despesa.tipo != ''){
+        if (despesa.tipo != '') {
+            console.log('Filtro de tipo')
             despesasFiltradas = despesasFiltradas.filter(d => d.tipo == despesa.tipo);
         }
 
         //descricao
-        if(despesa.descricao != ''){
+        if (despesa.descricao != '') {
+            console.log('Filtro de descricao')
             despesasFiltradas = despesasFiltradas.filter(d => d.descricao == despesa.descricao);
         }
 
         //valor
-        if(despesa.valor != ''){
+        if (despesa.valor != '') {
+            console.log('Filtro valor')
             despesasFiltradas = despesasFiltradas.filter(d => d.valor == despesa.valor);
         }
 
-        console.log(despesasFiltradas);
+        console.log(despesasFiltradas)
+        return despesasFiltradas;
     }
 }
 
@@ -159,13 +165,16 @@ function cadastrarDespesa() {
     }
 }
 
-function carregaListaDespesas() {
-    let despesas = Array();
+function carregaListaDespesas(despesas = Array(), filtro = false) {
 
-    despesas = bd.recuperarTodosRegistros();
+
+    if (despesas.length == 0 && filtro == false) {
+        despesas = bd.recuperarTodosRegistros();
+    }
 
     //selecionando o elemento tbody da tabela
     let listaDespesas = document.getElementById('listaDespesas');
+    listaDespesas.innerHTML = '';
 
     /*
     <tr>
@@ -190,19 +199,19 @@ function carregaListaDespesas() {
         switch (parseInt(d.tipo)) {
             case 1:
                 d.tipo = 'Alimentação'
-                break;
+                break
             case 2:
                 d.tipo = 'Educação'
-                break;
+                break
             case 3:
                 d.tipo = 'Lazer'
-                break;
+                break
             case 4:
                 d.tipo = 'Educação'
-                break;
+                break
             case 5:
                 d.tipo = 'Transporte'
-                break;
+                break
         }
 
         linha.insertCell(1).innerHTML = d.tipo;
@@ -221,6 +230,8 @@ function pesquisarDespesa() {
 
     let despesa = new Despesa(ano, mes, dia, tipo, descricao, valor);
 
-    bd.pesquiar(despesa);
+    let despesas = bd.pesquisar(despesa);
+
+    carregaListaDespesas(despesas, true);
 }
 
