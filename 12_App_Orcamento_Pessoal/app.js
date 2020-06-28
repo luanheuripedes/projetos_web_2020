@@ -232,12 +232,24 @@ function carregaListaDespesas(despesas = Array(), filtro = false) {
         btn.onclick = function(){
             //remover despesa;
             let id = this.id.replace('id_despesa_', '');
+            console.log(`aqui esta o id do replace ${id}`);
+            //MODAL para a verificação do Sim ou Não para a exclusão    
+            document.getElementById('modal_titulo').innerHTML = 'Exclusão';
+            document.getElementById('modal_titulo_div').className = 'modal-header text-danger';
+            document.getElementById('modal_conteudo').innerHTML = 'Clique em SIM par excluir e Não para voltar ';
+            document.getElementById('modal_btn').innerHTML = 'SIM';
+            document.getElementById('modal_btn2').innerHTML = 'NÃO'
+            document.getElementById('modal_btn').className = 'btn btn-danger';
+            document.getElementById('modal_btn2').className = 'btn btn-danger';
 
-            //alert(id);
+            //mensagem de sucesso
+            $('#modalExcluirDespesa').modal('show');
 
-            bd.remover(id);
-
-            window.location.reload();
+            document.getElementById('modal_btn').onclick = function(){
+                //console.log('Funcionous');
+                 bd.remover(id);
+                 window.location.reload();
+            }
         }
         linha.insertCell(4).append(btn);
 
@@ -259,4 +271,10 @@ function pesquisarDespesa() {
 
     carregaListaDespesas(despesas, true);
 }
+
+/*
+1- Apresentar Modal na exclusão de uma despesa
+2- Pagina de indicadores Ex: APRESENTAR DE FORMA AGRUPADA A SOMA DAS DESPESAS POR TIPO E MES
+
+*/
 
